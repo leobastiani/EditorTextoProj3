@@ -28,6 +28,6 @@ public class AbrirArquivoRequest implements Serializable {
 
     @Override
     public String toString() {
-        return this.nomeArquivo;
+        return "AbrirArquivoRequest("+this.nomeArquivo+")";
     }
 }

@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfaceRede;
+package servidor.objetosPorRede;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Leonardo
  */
-public class TextoSincronizado {
+public class SalvarArquivo implements Serializable {
     private String nomeArquivo;
     private String conteudoArquivo;
 
-    public TextoSincronizado(String nomeArquivo, String conteudoArquivo) {
+    public SalvarArquivo(String nomeArquivo, String conteudoArquivo) {
         this.nomeArquivo = nomeArquivo;
         this.conteudoArquivo = conteudoArquivo;
     }
@@ -34,6 +36,9 @@ public class TextoSincronizado {
         this.conteudoArquivo = conteudoArquivo;
     }
 
-    
+    @Override
+    public String toString() {
+        return "SalvarArquivo("+nomeArquivo+", "+conteudoArquivo+")";
+    }
     
 }

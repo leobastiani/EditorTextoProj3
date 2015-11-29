@@ -28,7 +28,7 @@ public class ComunicadorServidor extends Comunicador {
     int maxClients = 10;
 
     // objeto com todos os clientes que o servidor possui
-    private Vector<ClienteRedirecionador> clientes = new Vector(maxClients);
+    public Vector<ClienteRedirecionador> clientes = new Vector(maxClients);
 
     
     public ComunicadorServidor(String name, int port) {

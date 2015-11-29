@@ -24,21 +24,27 @@ public class ArquivoConteudo implements Serializable {
     String conteudoArquivo;
 
     /**
-     * Define o nome do arquivo do objeto e seu conteúdo
+     * Define o nome do arquivo
+     * e seu conteúdo é obtido abrindo-se o arquivo
      */
     public ArquivoConteudo(String nomeArquivo) {
         this.nomeArquivo = nomeArquivo;
         try {
             // abre o arquivo e obtem seu conteúdo
             String fullPath = ServidorEditorTexto.pastaPadrao + nomeArquivo;
-            conteudoArquivo = new String(Files.readAllBytes(Paths.get(fullPath)));
+            conteudoArquivo = new String(Files.readAllBytes(Paths.get(fullPath)), "UTF-8");
         } catch (IOException ex) {
             Logger.getLogger(ArquivoConteudo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    public ArquivoConteudo(String nomeArquivo, String conteudoArquivo) {
+        this.nomeArquivo = nomeArquivo;
+        this.conteudoArquivo = conteudoArquivo;
+    }
+
     @Override
     public String toString() {
-        return "ArquivoConteudo("+nomeArquivo+")";
+        return "ArquivoConteudo("+nomeArquivo+", "+conteudoArquivo+")";
     }
 }

@@ -17,6 +17,8 @@ import java.net.Socket;
  * @author Leonardo
  */
 public abstract class Comunicador {
+    // porta padrão para este comunicador
+    public static int defaultPort = 1234;
 
     /**
      * Variáveis

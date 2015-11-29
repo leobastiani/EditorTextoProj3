@@ -3,21 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidor;
+package servidor.objetosPorRede;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Leonardo
  */
-public class MaisInformacoesCliente {
-    // nome do Arquivo que o cliente está editando
-    String nomeArquivo = "";
+public class CriarArquivo implements Serializable {
+    public String nomeArquivo;
 
-    public String getNomeArquivo() {
-        return nomeArquivo;
-    }
-
-    public void setNomeArquivo(String nomeArquivo) {
+    public CriarArquivo(String nomeArquivo) {
         this.nomeArquivo = nomeArquivo;
     }
+    
 }

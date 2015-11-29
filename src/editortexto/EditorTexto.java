@@ -6,7 +6,7 @@
 package editortexto;
 
 /**
- *
+ * Sumida, edite aqui!
  * @author Leonardo
  */
 public class EditorTexto {

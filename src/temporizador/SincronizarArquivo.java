@@ -5,11 +5,8 @@
  */
 package temporizador;
 
-import InterfaceRede.TextoSincronizado;
+import servidor.objetosPorRede.SalvarArquivo;
 import comunicador.*;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JEditorPane;
 
 /**
@@ -49,7 +46,7 @@ public class SincronizarArquivo extends SelfRunnable {
         while(true) {
             try {
                 // o comunicador deve enviar o objeto que sincroniza
-                boolean enviadoComSucesso = comunicador.sendMsg(new TextoSincronizado(nomeArquivo, editorTexto.getText()));
+                boolean enviadoComSucesso = comunicador.sendMsg(new SalvarArquivo(nomeArquivo, editorTexto.getText()));
                 if (enviadoComSucesso) {
                     onDone();
                 } else {
