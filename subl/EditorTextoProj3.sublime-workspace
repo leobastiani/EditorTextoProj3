@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"if",
+				"if	If Condition"
+			],
+			[
+				"inser",
+				"insereNoNo"
+			],
+			[
+				"numNos",
+				"numNosDoNo"
+			],
+			[
 				"hstra",
 				"hstradutorChrome"
 			],
@@ -420,10 +432,6 @@
 				"print	print …"
 			],
 			[
-				"if",
-				"ife	if … else"
-			],
-			[
 				"e",
 				"eq	.eq()"
 			],
@@ -507,22 +515,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/Facul/Semestre Atual/Programação Orientada a Objetos/Projeto/EditorTextoProj3/src/comunicador/Comunicador.java",
-			"settings":
-			{
-				"buffer_size": 2569,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Leonardo/Desktop/fabrica.c",
-			"settings":
-			{
-				"buffer_size": 1696,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -599,10 +591,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 173.0,
-		"last_filter": "jsin",
+		"height": 392.0,
+		"last_filter": "set C",
 		"selected_items":
 		[
+			[
+				"set C",
+				"Set Syntax: C"
+			],
 			[
 				"jsin",
 				"Pretty JSON: Format (Pretty Print) JSON"
@@ -849,6 +845,23 @@
 	],
 	"file_history":
 	[
+		"/D/Facul/comp/alg_avore_binaria/alg2015/misc.c",
+		"/C/Users/Leonardo/AppData/Roaming/Skype/leogbastiani/configMic.xml",
+		"/C/Users/Leonardo/AppData/Roaming/Skype/leogbastiani/config.xml",
+		"/C/Users/Leonardo/AppData/Roaming/Skype/sharedMic.xml",
+		"/C/Users/Leonardo/AppData/Roaming/Skype/sharedMix.xml",
+		"/C/Users/Leonardo/AppData/Roaming/Skype/shared.xml",
+		"/C/Users/Leonardo/AppData/Roaming/Skype/RootTools/roottools.conf",
+		"/D/Facul/comp/alg_binario/main.c",
+		"/D/Facul/comp/alg_avore_binaria/ab.c",
+		"/D/Facul/comp/alg_avore_binaria/ab.h",
+		"/D/Facul/comp/alg_avore_binaria/remover_exercicio/remover_ab.c",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Leonardo/Desktop/hosts2",
+		"/D/Facul/Semestre Atual/Programação Orientada a Objetos/Projeto/EditorTextoProj3/src/comunicador/Comunicador.java",
+		"/D/shortcuts/sshIc.bat",
+		"/C/Users/Leonardo/Desktop/captchaStr.php",
+		"/C/Users/Leonardo/Desktop/fabrica.c",
 		"/C/Program Files (x86)/EasyPHP/data/localweb/Biblioteca/hs/hstradutorChrome.js",
 		"/C/Program Files (x86)/EasyPHP/data/localweb/Biblioteca/hs/hstradutorFirefox.js",
 		"/C/Program Files (x86)/EasyPHP/data/localweb/Biblioteca/javascriptToUrl.htm",
@@ -959,24 +972,7 @@
 		"/C/Users/Leonardo/AppData/Local/Temp/Rar$DIa0.997/fat.asm",
 		"/C/Users/Leonardo/AppData/Local/Temp/Rar$DIa0.807/multiplicacao.asm",
 		"/D/Facul/Semestres/4/Organização de Computadores Digitais I/Sarita/Provinha 4/exemplo_aula_fatorial_procedimento.asm",
-		"/C/Users/Leonardo/Desktop/exemplo_aula_fatorial_procedimento2.asm",
-		"/C/Users/Leonardo/Desktop/exemplo_aula_fatorial_procedimento.asm",
-		"/D/Facul/comp/c_snippets/make.py",
-		"/D/Facul/comp/c_snippets/text.txt",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/LeoCodeIntel/leocodeintel.sublime-settings",
-		"/D/Facul/comp/c_snippets/saida.txt",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/All Autocomplete/all_views_completions.py",
-		"/D/Facul/IC/scriptLattesDiff/py/JsonToJs.py",
-		"/D/Facul/IC/scriptLattesDiff/py/ConfigFile.py",
-		"/D/Facul/IC/scriptLattesDiff/js/jqueryFn.js",
-		"/D/Facul/comp/alg_biblioteca/queue.c",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/leocodeintel.sublime-settings",
-		"/D/Facul/IC/scriptLattesDiff/subl/leocodeintel.sublime-settings",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/D/Facul/IC/scriptLattesDiff/js/Number.js",
-		"/D/Facul/IC/scriptLattesDiff/json/scriptLattesDiff.js",
-		"/D/Facul/IC/scriptLattesDiff/xml/11072015/3030047284254233.xml"
+		"/C/Users/Leonardo/Desktop/exemplo_aula_fatorial_procedimento2.asm"
 	],
 	"find":
 	{
@@ -1005,6 +1001,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"remissivo",
+			"comando",
+			"varaible",
+			"esq",
+			"errors",
+			"image",
 			"hstradutorFirefox",
 			"htmlContent",
 			"html",
@@ -1126,13 +1128,7 @@
 			"// TODO",
 			"sinalAnterior",
 			"sinalPosterior",
-			"alteracoesPosterior",
-			"index",
-			"result",
-			"continue",
-			"'+'",
-			"'-'",
-			"alteracoes"
+			"alteracoesPosterior"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1163,183 +1159,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/Facul/Semestre Atual/Programação Orientada a Objetos/Projeto/EditorTextoProj3/src/comunicador/Comunicador.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2569,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1093,
-								1093
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"syntax": "Packages/User/Java Leo/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Leonardo/Desktop/fabrica.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1696,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1656,
-								1656
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/User/C++ Leo/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 972.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1381,6 +1202,10 @@
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 371.0
 	},
 	"pinned_build_system": "",
 	"project": "EditorTextoProj3.sublime-project",

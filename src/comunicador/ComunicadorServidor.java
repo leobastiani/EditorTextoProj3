@@ -20,34 +20,21 @@ import java.util.logging.Logger;
  */
 public class ComunicadorServidor extends Comunicador {
 
-    /**
-     * ****************************************************
-     * Variáveis
-     *****************************************************
-     */
+
     // socket de servidor que armazena a informação
     private ServerSocket serverSocket;
 
     // número máximo de clients
-    private int maxClients = 10;
+    int maxClients = 10;
 
     // objeto com todos os clientes que o servidor possui
     private Vector<ClienteRedirecionador> clientes = new Vector(maxClients);
 
-    /**
-     * ****************************************************
-     * Construtores
-     *****************************************************
-     */
+    
     public ComunicadorServidor(String name, int port) {
         super(name, port);
     }
 
-    /**
-     * ****************************************************
-     * Métodos
-     *****************************************************
-     */
     /**
      * Inicializa o servidor
      */
@@ -80,8 +67,10 @@ public class ComunicadorServidor extends Comunicador {
                     try {
                         System.out.println("Aguardando conexoes...");
                         Socket socket = serverSocket.accept();
-                        clientes.add(new ClienteRedirecionador(socket, port, ComunicadorServidor.this));
+                        ClienteRedirecionador cliente = new ClienteRedirecionador(socket, port, ComunicadorServidor.this);
+                        clientes.add(cliente);
                         System.out.println("Conectado!");
+                        onClienteConectado(cliente);
                     } catch (IOException ex) {
                         // fim da thread
                         return;
@@ -93,7 +82,7 @@ public class ComunicadorServidor extends Comunicador {
         System.out.println("Servidor escutando");
     }
 
-    private void redirecionar(Object obj, ClienteRedirecionador quemEnviou) throws IOException {
+    public void onRedirecionar(Object obj, ComunicadorCliente quemEnviou) throws IOException {
         // para todos os clientes presentes
         for (ClienteRedirecionador cliente : clientes) {
             if (cliente != quemEnviou) {
@@ -102,19 +91,41 @@ public class ComunicadorServidor extends Comunicador {
         }
     }
 
-    private void onCloseCliente(ClienteRedirecionador cliente) {
-        System.out.println("Cliente encerrado: "+cliente);
+    /**
+     * Função chamada assim que um cliente é terminado
+     */
+    public void onClienteClose(ComunicadorCliente cliente) {
+        System.out.println("onClienteClose: " + cliente.toString());
     }
 
     /**
+     * Função chamada assim que o cliente é conectado
+     */
+    private void onClienteConectado(ClienteRedirecionador cliente) {
+        System.out.println("onClienteConectado: " + cliente.toString());
+    }
+
+    /**
+     * Função chamada assim que o servidor recebe um objeto
+     */
+    public boolean onRecive(Object obj, ComunicadorCliente quemEnviou) {
+        System.out.println("Servidor.onRecive("+quemEnviou+"): "+ obj.toString());
+        return true; // sempre redireciona
+    }
+    
+    /**
      * Classe Cliente que redireciona
      */
-    private class ClienteRedirecionador extends ComunicadorCliente {
+    public class ClienteRedirecionador extends ComunicadorCliente {
 
         // servidor que me possui
         private ComunicadorServidor servidor;
+        
+        // neste objeto, vc pode ter mais informações a respeito do cliente dentro
+        // do servidor
+        public Object maisInformacoes = null;
 
-        private ClienteRedirecionador(Socket socket, int port, ComunicadorServidor servidor) throws IOException {
+        public ClienteRedirecionador(Socket socket, int port, ComunicadorServidor servidor) throws IOException {
             super(socket, port);
             this.servidor = servidor;
         }
@@ -122,8 +133,10 @@ public class ComunicadorServidor extends Comunicador {
         @Override
         public void onRecive(Object obj) {
             try {
-                // avisa o servidor para redirecionar
-                servidor.redirecionar(obj, this);
+                // se o servidor decidir que deve redirecionar
+                if (servidor.onRecive(obj, this)) {
+                    servidor.onRedirecionar(obj, this);
+                }
             } catch (IOException ex) {
                 onClose();
             }
@@ -131,7 +144,7 @@ public class ComunicadorServidor extends Comunicador {
 
         @Override
         public void onClose() {
-            ComunicadorServidor.this.onCloseCliente(this);
+            servidor.onClienteClose(this);
         }
     }
 
@@ -147,14 +160,9 @@ public class ComunicadorServidor extends Comunicador {
     }
 
     @Override
-    public void onClose() {
-        System.out.println("Encerrando o Servidor");
-    }
-
-    @Override
     public boolean close() {
         onClose();
-        
+
         try {
             // fecha a conexão com todos os clientes
             for (ClienteRedirecionador cliente : clientes) {

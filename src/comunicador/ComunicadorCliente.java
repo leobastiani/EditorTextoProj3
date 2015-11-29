@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author Leonardo
  */
-public abstract class ComunicadorCliente extends Comunicador {
+public class ComunicadorCliente extends Comunicador {
 
     // entrada e saída de dados
     ObjectOutputStream output;
@@ -32,7 +32,7 @@ public abstract class ComunicadorCliente extends Comunicador {
     /**
      * construtor usado pelo servidor já possui o socket
      */
-    public ComunicadorCliente(Socket socket, int port) throws IOException {
+    ComunicadorCliente(Socket socket, int port) throws IOException {
         this("", port);
         this.socket = socket;
         this.setInputAndOutput();
@@ -57,11 +57,30 @@ public abstract class ComunicadorCliente extends Comunicador {
         return true;
     }
 
-    public void sendMsg(Object obj) throws IOException {
-        output.writeObject(obj);
+    public boolean sendMsg(Object obj) {
+        try {
+            output.writeObject(obj);
+        } catch (IOException ex) {
+            Logger.getLogger(ComunicadorCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
     }
 
-    public abstract void onRecive(Object obj);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * função chamada assim que recebe um objeto
+     */
+    public void onRecive(Object obj) {
+        System.out.println("Cliente.onRecive("+this+"): "+obj.toString());
+    }
 
     private void startListen() {
         new Thread(new ListenerInput()).start();
