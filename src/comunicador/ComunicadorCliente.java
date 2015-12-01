@@ -28,6 +28,10 @@ public class ComunicadorCliente extends Comunicador {
     public ComunicadorCliente(String name, int port) {
         super(name, port);
     }
+    
+    public ComunicadorCliente(String name) {
+        super(name);
+    }
 
     /**
      * construtor usado pelo servidor já possui o socket

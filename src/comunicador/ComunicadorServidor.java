@@ -35,6 +35,10 @@ public class ComunicadorServidor extends Comunicador {
         super(name, port);
     }
 
+    public ComunicadorServidor(String name) {
+        super(name);
+    }
+
     /**
      * Inicializa o servidor
      */

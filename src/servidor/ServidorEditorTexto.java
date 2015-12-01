@@ -26,6 +26,10 @@ public class ServidorEditorTexto extends ComunicadorServidor {
         super(name, port);
     }
 
+    public ServidorEditorTexto(String name) {
+        super(name);
+    }
+
     @Override
     public void onRedirecionar(Object obj, ComunicadorCliente quemEnviou) throws IOException {
         super.onRedirecionar(obj, quemEnviou); //To change body of generated methods, choose Tools | Templates.
@@ -106,19 +110,19 @@ public class ServidorEditorTexto extends ComunicadorServidor {
     }
     
     private static void teste() throws InterruptedException {
-        ServidorEditorTexto server = new ServidorEditorTexto("Servidor", 1234);
+        ServidorEditorTexto server = new ServidorEditorTexto("Servidor");
         if(server.start() == false) {
             System.out.println("Não foi possível iniciar o servidor!");
             System.exit(0);
         }
         
-        ComunicadorCliente cliente1 = new ComunicadorCliente("cliente 1", 1234);
+        ComunicadorCliente cliente1 = new ComunicadorCliente("cliente 1");
         String localhost = "127.0.0.1";
         cliente1.connectToIp(localhost);
         cliente1.sendMsg(new Login("cliente 1"));
         cliente1.sendMsg(new CriarArquivo("md5.htm"));
         
-        ComunicadorCliente cliente2 = new ComunicadorCliente("cliente 2", 1234);
+        ComunicadorCliente cliente2 = new ComunicadorCliente("cliente 2");
         cliente2.connectToIp(localhost);
         
         cliente2.sendMsg(new AbrirArquivoRequest("md5.htm"));
