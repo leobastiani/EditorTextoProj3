@@ -39,6 +39,10 @@ public abstract class Comunicador {
         this.name = name;
         this.port = port;
     }
+    
+    public Comunicador(String name) {
+        this(name, defaultPort);
+    }
 
     /**
      * Métodos
