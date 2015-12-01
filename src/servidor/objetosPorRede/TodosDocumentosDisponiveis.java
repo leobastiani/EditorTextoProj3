@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author Leonardo
  */
 public class TodosDocumentosDisponiveis implements Serializable {
-    public class Request implements Serializable {
+    public static class Request implements Serializable {
         
     }
     
@@ -24,7 +24,7 @@ public class TodosDocumentosDisponiveis implements Serializable {
     public TodosDocumentosDisponiveis() {
         ArrayList<String> documentosArray = Documentos.getDocumetosDisponiveis();
         // converte para String[]
-        documentos = (String[]) documentosArray.toArray();
+        documentos = documentosArray.toArray(new String[documentosArray.size()]);
     }
     
 }

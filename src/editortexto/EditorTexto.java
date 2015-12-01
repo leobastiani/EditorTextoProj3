@@ -6,7 +6,7 @@
 package editortexto;
 
 import comunicador.ComunicadorCliente;
-import servidor.objetosPorRede.CriarArquivo;
+import servidor.objetosPorRede.*;
 
 /**
  * Sumida, edite aqui!
@@ -22,21 +22,24 @@ public class EditorTexto {
 
             @Override
             public void onRecive(Object obj) {
-                // onRecive eh oq acontece quando o cliente recebe uma msg
-                System.out.println(obj.toString());
+                super.onRecive(obj);
+                if (obj instanceof TodosDocumentosDisponiveis) {
+                    // faz alguma coisa com o obj
+                    TodosDocumentosDisponiveis objConvertido = (TodosDocumentosDisponiveis) obj;
+                    System.out.println("Recebi um TodosDoc...: "+objConvertido);
+                }
+                else if (obj instanceof ArquivoConteudo) {
+                    ArquivoConteudo objConvertido = (ArquivoConteudo) obj;
+                    System.out.println("Recebi o conteudo de um arquivo: "+objConvertido.nomeArquivo+":"+objConvertido.conteudoArquivo);
+                }
             }
-
-            @Override
-            public void onClose() {
-                System.out.println("Cliente fechou!");
-            }
-            
-            
             
         };
         cliente.connectToIp("127.0.0.1");
         
         cliente.sendMsg(new CriarArquivo("leo.htm"));
+        cliente.sendMsg(new TodosDocumentosDisponiveis.Request());
+        cliente.sendMsg(new AbrirArquivoRequest("leo.htm"));
         
         
         Thread.sleep(10000);

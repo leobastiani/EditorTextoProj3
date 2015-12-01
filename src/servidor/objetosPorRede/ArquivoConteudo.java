@@ -20,8 +20,8 @@ import servidor.ServidorEditorTexto;
  */
 public class ArquivoConteudo implements Serializable {
 
-    String nomeArquivo;
-    String conteudoArquivo;
+    public String nomeArquivo;
+    public String conteudoArquivo;
 
     /**
      * Define o nome do arquivo
