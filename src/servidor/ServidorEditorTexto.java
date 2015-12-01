@@ -106,6 +106,11 @@ public class ServidorEditorTexto extends ComunicadorServidor {
             }
             return false;
         }
+        if (obj instanceof TodosDocumentosDisponiveis.Request) {
+            // devo enviar o que o cliente solicitou
+            quemEnviou.sendMsg(new TodosDocumentosDisponiveis());
+            return false;
+        }
         return true;
     }
     
